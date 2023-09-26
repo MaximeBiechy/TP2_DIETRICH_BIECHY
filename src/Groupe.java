@@ -54,6 +54,28 @@ public class Groupe {
         }
     }
 
+    public double calculerMoyenne(String m){
+        Set<Integer> cles = etudiants.keySet();
+        List<Integer> listeCles = new ArrayList<>(cles);
+        double res = 0;
+        for (int i = 0; i < etudiants.size(); i++){
+            Integer etu = listeCles.get(i);
+            res += etudiants.get(etu).calculerMoyenne(m);
+        }
+        return res/etudiants.size();
+    }
+
+    public double calculerMoyenneGenerale(){
+        Set<Integer> cles = etudiants.keySet();
+        List<Integer> listeCles = new ArrayList<>(cles);
+        double res = 0;
+        for (int i = 0; i < etudiants.size(); i++){
+            Integer etu = listeCles.get(i);
+            res += etudiants.get(etu).calculerMoyenneGenerale();
+        }
+        return res/ etudiants.size();
+    }
+
     //GETTER
     public HashMap<Integer, Etudiant> getEtudiants() {
         return this.etudiants;
