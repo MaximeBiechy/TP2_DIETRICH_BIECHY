@@ -62,4 +62,12 @@ public class Etudiant {
     public HashMap<String, ArrayList<Integer>> getResultats() {
         return resultats;
     }
+
+    public Formation getFormation() {
+        return this.formation;
+    }
+
+    public Identite getIdentite() {
+        return this.id;
+    }
 }

@@ -11,4 +11,9 @@ public class Identite {
         this.nom = nom;
         this.prenom = prenom;
     }
+
+    //GETTER
+    public String getNip() {
+        return this.nip;
+    }
 }
