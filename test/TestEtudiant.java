@@ -59,6 +59,19 @@ public class TestEtudiant {
     assertEquals(-1, etu.calculerMoyenne("maths"), 0.01);
   }
 
+  // Test méthode calculerMoyenne avec une matière inexistante
+  @Test
+  public void test_calculerMoyenne_matiere_existe_mais_pas_de_note(){
+    // Préparation des données
+    formation.ajouterMatiere(new String("maths"), 1);
+
+    // Méthode testée
+    etu.calculerMoyenne("maths");
+
+    // Vérification
+    assertEquals(-1, etu.calculerMoyenne("maths"), 0.01);
+  }
+
   // Test méthode calculerMoyenneGeneral
   @Test
   public void test_calculerMoyenneGeneral(){

@@ -34,7 +34,7 @@ public class Etudiant {
     //méthode calculerMoyenne
     public double calculerMoyenne(String m) {
         double res = -1;
-        if (resultats.containsKey(m)) {
+        if (resultats.containsKey(m) && resultats.get(m).size() != 0) {
             res = 0;
             for (int i = 0; i < this.resultats.get(m).size(); i++) {
                 res += this.resultats.get(m).get(i);
