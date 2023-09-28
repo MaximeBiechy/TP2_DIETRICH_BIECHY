@@ -12,7 +12,7 @@ public class TestMoyenneGroupe {
   private Groupe g;
 
   @BeforeEach
-  public void init(){
+  public void init() throws Exception {
     formation = new Formation(12345);
     etu1 = new Etudiant(new Identite("123", "Jean", "Jack"), formation);
     etu2 = new Etudiant(new Identite("345", "Gerard", "Jugnot"), formation);

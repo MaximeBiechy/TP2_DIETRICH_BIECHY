@@ -23,7 +23,7 @@ public class TestEtudiant {
 
   // Test méthode ajouterNoteMatiere
   @Test
-  public void test_ajouterNoteMatiere(){
+  public void test_ajouterNoteMatiere() throws Exception {
     // Préparation des données
     formation.ajouterMatiere(new String("maths"), 1);
 
@@ -37,7 +37,7 @@ public class TestEtudiant {
 
   // Test méthode calculerMoyenne
   @Test
-  public void test_calculerMoyenne(){
+  public void test_calculerMoyenne() throws Exception {
     // Préparation des données
     formation.ajouterMatiere(new String("maths"), 1);
 
@@ -61,7 +61,7 @@ public class TestEtudiant {
 
   // Test méthode calculerMoyenne avec une matière inexistante
   @Test
-  public void test_calculerMoyenne_matiere_existe_mais_pas_de_note(){
+  public void test_calculerMoyenne_matiere_existe_mais_pas_de_note() throws Exception {
     // Préparation des données
     formation.ajouterMatiere(new String("maths"), 1);
 
@@ -74,7 +74,7 @@ public class TestEtudiant {
 
   // Test méthode calculerMoyenneGeneral
   @Test
-  public void test_calculerMoyenneGeneral(){
+  public void test_calculerMoyenneGeneral() throws Exception {
     // Préparation des données
     formation.ajouterMatiere(new String("histoire"), 1);
     formation.ajouterMatiere(new String("maths"), 1);

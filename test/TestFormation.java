@@ -4,7 +4,7 @@ import static org.junit.jupiter.api.Assertions.assertEquals;
 
 public class TestFormation {
     @Test
-    public void testAjouterMatiere() {
+    public void testAjouterMatiere() throws Exception {
         Formation f = new Formation(1);
         String m = "Maths";
         f.ajouterMatiere(m, 1);
@@ -12,7 +12,19 @@ public class TestFormation {
     }
 
     @Test
-    public void testSupprimerMatiere() {
+    public void testAjouterMatiere_coeff_negatif() throws Exception {
+        Formation f = new Formation(1);
+        String m = "Maths";
+        try {
+            f.ajouterMatiere(m, -1);
+        } catch (Exception e) {
+            assertEquals("Coeff négatif", e.getMessage());
+        }
+    }
+
+
+    @Test
+    public void testSupprimerMatiere() throws Exception {
         Formation f = new Formation(1);
         String m = "Maths";
         String m2 = "Français";
@@ -23,7 +35,7 @@ public class TestFormation {
     }
 
     @Test
-    public void testSupprimerNonPrésent() {
+    public void testSupprimerNonPrésent() throws Exception {
         Formation f = new Formation(1);
         String m = "Maths";
         String m2 = "Français";
@@ -35,7 +47,7 @@ public class TestFormation {
     }
 
     @Test
-    public void testConnaitreCoeff() {
+    public void testConnaitreCoeff() throws Exception {
         Formation f = new Formation(1);
         String m = "Maths";
         String m2 = "Français";
@@ -44,11 +56,15 @@ public class TestFormation {
     }
 
     @Test
-    public void testConnaitreCoeffNonPrésent() {
+    public void testConnaitreCoeffNonPrésent() throws Exception {
         Formation f = new Formation(1);
         String m = "Maths";
         String m2 = "Français";
         f.ajouterMatiere(m, 1);
         assertEquals(-1, f.connaitreCoeff(m2), "Le coefficient retourné est bon alors que la matière n'est pas dans la collection.");
     }
+
+
+
+
 }

@@ -13,7 +13,10 @@ public class Formation {
   }
 
   // Methode ajouterMatiere
-  public void ajouterMatiere(String nom, int coeff){
+  public void ajouterMatiere(String nom, int coeff) throws Exception {
+    if (coeff <= 0){
+      throw new Exception("Coeff négatif");
+    }
     this.matiere.put(nom, coeff);
   }
 
